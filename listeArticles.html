@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogue - StyleMode</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-tshirt me-2"></i>StyleMode
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="listeArticles.html">Catalogue</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                <form class="d-flex me-3">
+                    <input class="form-control me-2" type="search" placeholder="Rechercher...">
+                    <button class="btn btn-outline-light" type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+                <div class="navbar-nav">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="badge bg-danger rounded-pill">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Catalogue -->
+    <div class="catalogue-header">
+        <div class="container">
+            <h1 class="display-5 fw-bold">Catalogue des produits</h1>
+            <p class="lead">Découvrez tous nos articles en stock</p>
+        </div>
+    </div>
+
+    <!-- Statistiques -->
+    <div class="container py-4">
+        <div class="row text-center">
+            <div class="col-md-3 mb-3">
+                <div class="card bg-light">
+                    <div class="card-body">
+                        <h3 class="total-products">12</h3>
+                        <p class="mb-0">Produits</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="card bg-light">
+                    <div class="card-body">
+                        <h3 class="in-stock">8</h3>
+                        <p class="mb-0">En stock</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="card bg-light">
+                    <div class="card-body">
+                        <h3 class="limited-stock">2</h3>
+                        <p class="mb-0">Stock limité</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="card bg-light">
+                    <div class="card-body">
+                        <h3 class="out-of-stock">2</h3>
+                        <p class="mb-0">Rupture</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filtres -->
+    <div class="container py-3">
+        <div class="filter-section">
+            <div class="row align-items-center">
+                <div class="col-md-3 mb-2">
+                    <label for="categoryFilter" class="form-label">Catégorie</label>
+                    <select class="form-select" id="categoryFilter">
+                        <option value="all">Toutes les catégories</option>
+                        <option value="Homme">Homme</option>
+                        <option value="Femme">Femme</option>
+                        <option value="Enfant">Enfant</option>
+                        <option value="Accessoire">Accessoire</option>
+                    </select>
+                </div>
+                <div class="col-md-3 mb-2">
+                    <label for="stockFilter" class="form-label">Disponibilité</label>
+                    <select class="form-select" id="stockFilter">
+                        <option value="all">Tous les stocks</option>
+                        <option value="En stock">En stock</option>
+                        <option value="Stock limité">Stock limité</option>
+                        <option value="Rupture">Rupture</option>
+                    </select>
+                </div>
+                <div class="col-md-4 mb-2">
+                    <label for="searchTable" class="form-label">Recherche</label>
+                    <input type="text" class="form-control" id="searchTable" placeholder="Rechercher un produit...">
+                </div>
+                <div class="col-md-2 mb-2">
+                    <label class="form-label invisible">Boutons</label>
+                    <button class="btn btn-danger w-100" onclick="filterTable()">
+                        <i class="fas fa-filter me-1"></i>Filtrer
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tableau des produits -->
+    <div class="container py-4">
+        <div class="table-container">
+            <div class="table-responsive">
+                <table class="table table-hover table-striped mb-0">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Image</th>
+                            <th scope="col">Désignation</th>
+                            <th scope="col">Catégorie</th>
+                            <th scope="col">Prix Unitaire</th>
+                            <th scope="col">Stock</th>
+                            <th scope="col">Disponibilité</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        <!-- Les lignes seront générées par JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer (identique à index.html) -->
+    <footer class="bg-dark text-white">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5 class="mb-4">
+                        <i class="fas fa-tshirt me-2"></i>StyleMode
+                    </h5>
+                    <p>Votre boutique de vêtements en ligne préférée. Qualité, style et prix imbattables.</p>
+                </div>
+                <div class="col-md-4 footer-links">
+                    <h6>Liens rapides</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="listeArticles.html">Catalogue</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Mentions légales</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h6>Nous suivre</h6>
+                    <div class="social-icons mt-3">
+                        <a href="#" class="me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <p>&copy; 2024 StyleMode. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/scripts.js"></script>
+</body>
+</html>

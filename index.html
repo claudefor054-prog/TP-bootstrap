@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StyleMode - E-commerce de Vêtements</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Notre CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-tshirt me-2"></i>StyleMode
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="listeArticles.html">Catalogue</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                <form class="d-flex me-3">
+                    <input class="form-control me-2" type="search" placeholder="Rechercher...">
+                    <button class="btn btn-outline-light" type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+                <div class="navbar-nav">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="badge bg-danger rounded-pill">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold">Collection Printemps-Été 2024</h1>
+            <p class="lead mb-4">Découvrez les dernières tendances mode à prix imbattables</p>
+            <a href="listeArticles.html" class="btn btn-danger btn-lg me-2">
+                <i class="fas fa-shopping-bag me-2"></i>Voir la collection
+            </a>
+            <a href="#promotions" class="btn btn-outline-light btn-lg">
+                <i class="fas fa-tag me-2"></i>Promotions
+            </a>
+        </div>
+    </section>
+
+    <!-- Section Promotions -->
+    <div class="container py-5" id="promotions">
+        <h2 class="section-title">Promotions en cours</h2>
+        <div class="row g-4" id="product-grid">
+            <!-- Les produits seront générés par JavaScript -->
+        </div>
+    </div>
+
+    <!-- Avantages -->
+    <div class="container py-5 advantages-section">
+        <h2 class="section-title">Pourquoi nous choisir ?</h2>
+        <div class="row text-center">
+            <div class="col-md-4">
+                <div class="p-4">
+                    <i class="fas fa-truck fa-3x mb-3"></i>
+                    <h4>Livraison gratuite</h4>
+                    <p>Livraison offerte à partir de 50€ d'achat</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-4">
+                    <i class="fas fa-shield-alt fa-3x mb-3"></i>
+                    <h4>Paiement sécurisé</h4>
+                    <p>Paiement 100% sécurisé par carte bancaire</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-4">
+                    <i class="fas fa-exchange-alt fa-3x mb-3"></i>
+                    <h4>Retours gratuits</h4>
+                    <p>Retours gratuits sous 30 jours</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5 class="mb-4">
+                        <i class="fas fa-tshirt me-2"></i>StyleMode
+                    </h5>
+                    <p>Votre boutique de vêtements en ligne préférée. Qualité, style et prix imbattables.</p>
+                </div>
+                <div class="col-md-4 footer-links">
+                    <h6>Liens rapides</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="listeArticles.html">Catalogue</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Mentions légales</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h6>Nous suivre</h6>
+                    <div class="social-icons mt-3">
+                        <a href="#" class="me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p>&copy; 2024 StyleMode. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
